@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 // Reducers
+import AuthReducer from '../reducers/auth'
+import ConfigReducer from '../reducers/configs'
 import pageReducer from '../reducers/components/pages'
 
 import rightSidebarReducer from '../reducers/components/overlays/sidebar/right'
@@ -10,6 +12,8 @@ import dialogConfirmReducer from '../reducers/components/overlays/dialog/confirm
 
 export default configureStore({
   reducer: {
+    ConfigController: ConfigReducer,
+    AuthController: AuthReducer,
     pageView: pageReducer,
     rightSidebarView: rightSidebarReducer,
     leftSidebarView: leftSidebarReducer,

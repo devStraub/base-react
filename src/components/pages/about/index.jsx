@@ -8,8 +8,7 @@ export default function About() {
 
     return (
         <>
-            <Card style={{ minWidth: '90%' }}>
-                <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+            <Card style={{ width: '100%', height: '100%' }}>
                 <Card.Body>
                     <Card.Title>Card</Card.Title>
                     <Card.Text>

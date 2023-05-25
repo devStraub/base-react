@@ -24,11 +24,10 @@ export default function LeftSidebar() {
             position="left" 
             onHide={() => dispatch(closeLeftSidebar())}>
 
-            <h2>Menu</h2>
+            <h2>Menu Monopagina</h2>
 
             <Button 
                 label="About" 
-                icon="pi pi-check"
                 style={{ width: '100%', marginBlock: '5px'}}
                 onClick={() => {
                     dispatch(setPage(<About/>))
@@ -36,7 +35,6 @@ export default function LeftSidebar() {
                 }} />
             <Button 
                 label="Projects" 
-                icon="pi pi-check"
                 style={{ width: '100%', marginBlock: '5px'}}
                 onClick={() => {
                     dispatch(setPage(<Projects/>))

@@ -1,39 +1,40 @@
 import React from 'react'
-import './App.css';
+
+//Redux
+import { useSelector } from 'react-redux'
+
+// Router
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Primefaces
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import 'primeicons/primeicons.css';
+import '/node_modules/primeflex/primeflex.css'
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// CSS
+import './App.css';
+
 // Components
-import Header from './components/header'
+import Auth from './components/auth'
 import Pages from './components/pages'
-import Overlay from './components/overlay';
 
-
-function App() {  
+function App() {
+  const authenticated = useSelector(state => state.AuthController.authenticated)
 
   return (
     <>
-      <header>
-        <Header/>
-      </header>
-
-      <main>
-        <Pages />
-      </main>
-
-      <footer>
-        <div className='footer-center'>
-          footer
-        </div>
-      </footer>
-
-      <Overlay />
+      {authenticated === true
+        ? 
+        <Router>
+          <Pages />
+        </Router>        
+        : 
+        <Auth/>
+      }      
     </>
   );
 }
